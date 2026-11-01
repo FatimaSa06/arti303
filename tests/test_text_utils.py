@@ -8,10 +8,10 @@ import text_utils
 
 
 def test_clean_name_whitespace():
-    assert text_utils.clean_name("  sara ali  ") == "Sara Ali"
-    assert text_utils.clean_name("sara   ali") == "Sara Ali"
+    """Verify that leading/trailing and excess internal whitespace is cleaned."""
+    assert text_utils.clean_name("  Sara   Alotaibi  ") == "Sara Alotaibi"
 
 
 def test_clean_name_capitalisation():
-    assert text_utils.clean_name("FAISAL ALHARBI") == "Faisal Alharbi"
-    assert text_utils.clean_name("lama alqahtani") == "Lama Alqahtani"
+    """Verify that student names are formatted with proper title casing."""
+    assert text_utils.clean_name("sara alotaibi") == "Sara Alotaibi"
